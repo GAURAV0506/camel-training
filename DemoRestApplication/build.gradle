@@ -1,0 +1,48 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.4.RELEASE'
+		camelVersion = '2.19.1'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath('se.transmode.gradle:gradle-docker:1.2')
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'docker'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.apache.camel:camel-spring-boot-starter:2.19.1')
+	compile('org.apache.cxf:cxf-spring-boot-starter-jaxrs:3.1.11')
+	compile('org.projectlombok:lombok')
+	compile(group: 'org.apache.camel',         name: 'camel-servlet',                      version: camelVersion)
+	compile(group: 'org.apache.camel',         name: 'camel-jackson',                      version: camelVersion)
+	//compile(group: 'org.springframework.boot',      name: 'spring-boot-starter-jetty',              version: springBootVersion)
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+task buildDocker(type: Docker, dependsOn: build) {
+	push = true
+	applicationName = jar.baseName
+	dockerfile = file('src/main/docker/Dockerfile')
+	doFirst {
+		copy {
+			from jar
+			into stageDir
+		}
+	}
+}
