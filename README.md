@@ -29,14 +29,15 @@ Include camel library in your project.
     
 
 ## Blogs and Links: 
-http://camel.apache.org/book-getting-started.html#BookGettingStarted-message-and-exchange
-http://www.davsclaus.com/
-http://www.javainuse.com/camel/camel_java
-http://www.mastertheintegration.com/camel/camel-introduction.html
-https://dzone.com/articles/open-source-integration-apache
-http://camel.apache.org/transport.html
-https://stackoverflow.com/questions/8845186/what-exactly-is-apache-camel
-https://www.infoq.com/articles/eai-with-apache-camel
+
+* http://camel.apache.org/book-getting-started.html#BookGettingStarted-message-and-exchange
+* http://www.davsclaus.com/
+* http://www.javainuse.com/camel/camel_java
+* http://www.mastertheintegration.com/camel/camel-introduction.html
+* https://dzone.com/articles/open-source-integration-apache
+* http://camel.apache.org/transport.html
+* https://stackoverflow.com/questions/8845186/what-exactly-is-apache-camel
+* https://www.infoq.com/articles/eai-with-apache-camel
 
 ### Wrting clean camel code
 * [cleaning-the-camel](https://capgemini.github.io/java/cleaning-the-camel)
