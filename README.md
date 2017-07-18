@@ -3,8 +3,7 @@ This repository holds camel training materials
 
 Learning path and the reference materials.
 
-
-##Learning Path:
+## Learning Path:
 
 ### Setting up Camel
 Include camel library in your project.
